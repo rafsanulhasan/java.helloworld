@@ -11,14 +11,24 @@ import java.util.Scanner;
  * @author Asad
  */
 public class Mark {
-    public int mark;
+    public int mark=0;
+    /**
+     *      
+     * @param mark 
+     */
     public Mark(int mark){
         this.mark=mark;
     }
+    /**
+     * 
+     * @param marks
+     * @param length 
+     */
     public static void scanMarks(Mark[] marks, int length)
     {
         for (int i=0;i<length;i++)
         {
+            System.out.print("Mark " + (i+1) + ": ");
             Scanner s=new Scanner(System.in);
             int m=s.nextInt();
             marks[i]=new Mark(m);
