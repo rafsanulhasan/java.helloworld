@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 package helloworld;
+<<<<<<< OURS
+
+/**
+ *
+ * @author Asad
+ */
+public class Mark {
+    
+=======
 import java.util.Scanner;
 
 /**
@@ -34,4 +43,5 @@ public class Mark {
             marks[i]=new Mark(m);
         }
     }
+>>>>>>> THEIRS
 }
