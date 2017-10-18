@@ -6,6 +6,7 @@
  */
 package helloworld;
 import java.io.IOException;
+
 /**
  *
  * @author Asad
@@ -13,39 +14,34 @@ import java.io.IOException;
 public class HelloWorld {
 
     /**
-     * @param args the command line arguments
+     * @param s the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] s) throws IOException {
         // TODO code application logic here
-        int[] marks;
+        Mark[] marks;
         if (s.length>0)
         {   
-            marks=new int[s.length];
-            for (int i=0;i<marks.length;i++)
-                marks[i]=Integer.parseInt(s[0]);
+            marks=new Mark[s.length];
+            for (int i=0;i<s.length;i++)
+                marks[i]=new Mark(Integer.parseInt(s[0]));
         }
         else 
         {
-            marks=new int[3];
-            for (int i=0;i<3;i++)
-            {
-                System.out.print("Mark " + (i+1) + ": ");
-                marks[i]=System.in.read();
-            }
+            marks=new Mark[3];
+            Mark.scanMarks(marks, 3);
         }
-        for (int i=0;i<marks.length;i++)
-        {
-            int mark=marks[i];
-            if (mark <=30) {
+        for (Mark mark : marks) {
+            if (mark.mark <=30) {
                 System.out.println("Poor Performanec work hard");
             }
-            else if (mark > 30 && mark <= 45 ) {
+            else if (mark.mark > 30 && mark.mark <= 45 ) {
                 System.out.println("Passed with C Grade");
             }
-            else if (mark > 45 && mark <= 60 ) {
+            else if (mark.mark > 45 && mark.mark <= 60 ) {
                 System.out.println("Passed with B Grade");
             }
-            else if (mark > 60) {
+            else if (mark.mark > 60) {
                 System.out.println("Passed with A grade");
             }else{
                 System.out.println("Invaild Input");
